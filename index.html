@@ -217,6 +217,47 @@
   cursor: pointer;
 }
 
+    /* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  max-width: 500px;
+  margin: 8% auto;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#successMessage {
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+  font-weight: 600;
+}
+
   </style>
 </head>
 
@@ -237,7 +278,8 @@
   <div>
     <h1>Building Strong Foundations in Math & Science</h1>
     <p>Personalized 1-on-1 online tutoring for Grades 1–12, aligned with the US/CA curriculum.</p>
-    <a href="#" class="btn">Book a Free Demo</a>
+    <a href="javascript:void(0)" class="btn" onclick="openModal()">Book a Free Demo</a>
+
   </div>
   <img src="images/hero-student.jpg" alt="Online learning student">
 </section>
@@ -283,7 +325,8 @@
 
 <section class="cta">
   <h2>Give Your Child a Strong Academic Edge</h2>
-  <a href="#" class="btn">Schedule a Free Trial</a>
+  <a href="javascript:void(0)" class="btn" onclick="openModal()">Schedule a Free Trial</a>
+
 </section>
 
 <section class="container" id="contact" style="padding:60px 0;">
@@ -324,8 +367,76 @@
   © 2026 Merit Learners. All rights reserved.
 </footer>
 
+<!-- TRIAL FORM MODAL -->
+<div id="trialModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2>Book a Free Trial Class</h2>
+
+    <form id="trialForm"
+      action="https://formspree.io/f/XXXXYYYY"
+      method="POST"
+      onsubmit="handleSubmit(event)"
+    >
+      <input type="text" name="student_name" placeholder="Student Name" required>
+
+      <select name="grade" required>
+        <option value="">Select Grade</option>
+        <option>Grade 1–5</option>
+        <option>Grade 6–8</option>
+        <option>Grade 9–12</option>
+      </select>
+
+      <select name="course" required>
+        <option value="">Select Course</option>
+        <option>Math</option>
+        <option>Science</option>
+        <option>Math & Science</option>
+      </select>
+
+      <input type="email" name="email" placeholder="Parent Email" required>
+      <input type="tel" name="phone" placeholder="Contact Number" required>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="successMessage" style="display:none;">
+      ✅ Thank you! We will contact you shortly.
+    </p>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("trialModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("trialModal").style.display = "none";
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = document.getElementById("trialForm");
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      form.style.display = "none";
+      document.getElementById("successMessage").style.display = "block";
+    }
+  });
+}
+</script>
+  
+  
 </body>
 </html>
+
 
 
 
