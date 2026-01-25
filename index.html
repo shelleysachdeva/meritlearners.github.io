@@ -333,36 +333,52 @@
 
     <h2>Book a Free Trial Class</h2>
 
-    <form id="trialForm"
-      action="https://formspree.io/f/XXXXYYYY"
-      method="POST"
-      onsubmit="handleSubmit(event)"
-    >
-      <input type="text" name="student_name" placeholder="Student Name" required>
+    <form
+  id="trialForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfL5gWJZ6t4Kp7xTq0mE3v6C1YH7Xx9sG5R9Y/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true; showSuccess();"
+>
 
-      <select name="grade" required>
-        <option value="">Select Grade</option>
-        <option>Grade 1–5</option>
-        <option>Grade 6–8</option>
-        <option>Grade 9–12</option>
-      </select>
+  <input type="text"
+         name="entry.2005620554"
+         placeholder="Student Name"
+         required>
 
-      <select name="course" required>
-        <option value="">Select Course</option>
-        <option>Math</option>
-        <option>Science</option>
-        <option>Math & Science</option>
-      </select>
+  <select name="entry.1045781291" required>
+    <option value="">Select Grade</option>
+    <option>Grade 1–5</option>
+    <option>Grade 6–8</option>
+    <option>Grade 9–12</option>
+  </select>
 
-      <input type="email" name="email" placeholder="Parent Email" required>
-      <input type="tel" name="phone" placeholder="Contact Number" required>
+  <select name="entry.1065046570" required>
+    <option value="">Select Course</option>
+    <option>Math</option>
+    <option>Science</option>
+    <option>Math & Science</option>
+  </select>
 
-      <button type="submit">Submit</button>
-    </form>
+  <input type="email"
+         name="entry.1166974658"
+         placeholder="Parent Email"
+         required>
 
-    <p id="successMessage" style="display:none;">
-      ✅ Thank you! We will contact you shortly.
-    </p>
+  <input type="tel"
+         name="entry.839337160"
+         placeholder="Contact Number"
+         required>
+
+  <button type="submit">Submit</button>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <p id="successMessage" style="display:none;"><p id="successMessage" style="display:none;">
+  ✅ Thank you! We will contact you shortly.
+</p>
+
   </div>
 </div>
 
@@ -395,6 +411,7 @@ function handleSubmit(event) {
   
 </body>
 </html>
+
 
 
 
