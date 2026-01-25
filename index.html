@@ -20,26 +20,17 @@
       --light: #f9fafb;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       color: var(--dark);
       line-height: 1.6;
-      background: white;
     }
 
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-    }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     .container {
       max-width: 1200px;
@@ -80,15 +71,8 @@
       padding: 80px 0;
     }
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
+    .hero h1 { font-size: 42px; margin-bottom: 20px; }
+    .hero p { font-size: 18px; margin-bottom: 30px; }
 
     .btn {
       display: inline-block;
@@ -97,6 +81,7 @@
       padding: 14px 30px;
       border-radius: 30px;
       font-weight: 600;
+      cursor: pointer;
     }
 
     .hero img {
@@ -131,9 +116,7 @@
     }
 
     /* GRADES */
-    .grades {
-      padding: 70px 0;
-    }
+    .grades { padding: 70px 0; }
 
     .grade-grid {
       display: grid;
@@ -148,13 +131,8 @@
       border-top: 6px solid var(--yellow);
     }
 
-    .grade-card:nth-child(2) {
-      border-color: var(--orange);
-    }
-
-    .grade-card:nth-child(3) {
-      border-color: var(--primary);
-    }
+    .grade-card:nth-child(2) { border-color: var(--orange); }
+    .grade-card:nth-child(3) { border-color: var(--primary); }
 
     /* CTA */
     .cta {
@@ -162,11 +140,6 @@
       color: white;
       padding: 70px 20px;
       text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
     }
 
     .cta .btn {
@@ -183,40 +156,61 @@
       font-size: 14px;
     }
 
-    /* MOBILE */
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 500px;
+      margin: 8% auto;
+      padding: 30px;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .trial-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .trial-form input,
+    .trial-form select {
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+    }
+
+    .trial-form button {
+      background: var(--primary);
+      color: white;
+      padding: 14px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
       }
     }
-    /* FREE TRIAL FORM */
-.trial-form {
-  max-width: 500px;
-  margin: auto;
-  display: grid;
-  gap: 15px;
-}
-
-.trial-form input,
-.trial-form select {
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 16px;
-}
-
-.trial-form button {
-  background: var(--primary);
-  color: white;
-  padding: 14px;
-  border-radius: 30px;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-   
   </style>
 </head>
 
@@ -226,10 +220,10 @@
   <div class="container">
     <div class="logo">Merit Learners</div>
     <nav>
-  <a href="#programs">Programs</a>
-  <a href="#why-us">Why Us</a>
-  <a href="#contact">Contact</a>
-  </nav>
+      <a href="#programs">Programs</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
@@ -237,145 +231,77 @@
   <div>
     <h1>Building Strong Foundations in Maths & Science</h1>
     <p>Personalized 1-on-1 online tutoring for Grades 1–12, aligned with the US/CA curriculum.</p>
-    <a href="javascript:void(0)" class="btn" onclick="openModal()">Book a Free Demo</a>
-
+    <a class="btn" onclick="openModal()">Book a Free Demo</a>
   </div>
   <img src="images/hero-student.jpg" alt="Online learning student">
 </section>
 
 <section class="features" id="why-us">
   <div class="container feature-grid">
-    <div class="card">
-      <i class="fa-solid fa-user-graduate"></i>
-      <p>Certified & Experienced Tutors</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-book-open"></i>
-      <p>US/CA Curriculum Aligned</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-child"></i>
-      <p>1-on-1 Personalized Attention</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-clock"></i>
-      <p>Flexible Time Zones</p>
-    </div>
+    <div class="card"><i class="fa-solid fa-user-graduate"></i><p>Certified Tutors</p></div>
+    <div class="card"><i class="fa-solid fa-book-open"></i><p>US/CA Curriculum</p></div>
+    <div class="card"><i class="fa-solid fa-child"></i><p>1-on-1 Learning</p></div>
+    <div class="card"><i class="fa-solid fa-clock"></i><p>Flexible Timings</p></div>
   </div>
 </section>
 
 <section class="grades container" id="programs">
   <h2 style="text-align:center;margin-bottom:40px;">Programs We Offer</h2>
   <div class="grade-grid">
-    <div class="grade-card">
-      <h3>Elementary (Grades 1–5)</h3>
-      <p>Strong foundations in Maths & Science with fun, engaging methods.</p>
-    </div>
-    <div class="grade-card">
-      <h3>Middle School (Grades 6–8)</h3>
-      <p>Concept clarity, problem-solving, and exam readiness.</p>
-    </div>
-    <div class="grade-card">
-      <h3>High School (Grades 9–12)</h3>
-      <p>Advanced concepts aligned with US/CA standards.</p>
-    </div>
+    <div class="grade-card"><h3>Grades 1–5</h3></div>
+    <div class="grade-card"><h3>Grades 6–8</h3></div>
+    <div class="grade-card"><h3>Grades 9–12</h3></div>
   </div>
 </section>
 
 <section class="cta">
   <h2>Give Your Child a Strong Academic Edge</h2>
-  <a href="javascript:void(0)" class="btn" onclick="openModal()">Schedule a Free Trial</a>
-
+  <a class="btn" onclick="openModal()">Schedule a Free Trial</a>
 </section>
 
+<section class="container" id="contact" style="padding:60px 0;">
+  <h2>Contact Us</h2>
+  <p>Email: info@meritlearners.com</p>
 </section>
-  
-<section id="trial-form" class="container" style="padding:80px 0;">
-  <h2 style="text-align:center;margin-bottom:30px;">
-    Book a Free Trial Class
-  </h2>
 
-  <form class="trial-form">
-    <input type="text" placeholder="Student Name" required>
-
-    <select required>
-      <option value="">Select Grade</option>
-      <option>Grade 1–5</option>
-      <option>Grade 6–8</option>
-      <option>Grade 9–12</option>
-    </select>
-
-    <select required>
-      <option value="">Select Course</option>
-      <option>Maths</option>
-      <option>Science</option>
-      <option>Maths & Science</option>
-    </select>
-
-    <input type="email" placeholder="Parent Email ID" required>
-    <input type="tel" placeholder="Contact Number" required>
-
-    <button type="submit">Submit</button>
-  </form>
-</section>
-  
 <footer>
   © 2026 Merit Learners. All rights reserved.
 </footer>
 
-<!-- TRIAL FORM MODAL -->
+<!-- MODAL -->
 <div id="trialModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
-
     <h2>Book a Free Trial Class</h2>
 
-    <form
-  id="trialForm"
-  action="https://docs.google.com/forms/d/e/1FAIpQLSfL5gWJZ6t4Kp7xTq0mE3v6C1YH7Xx9sG5R9Y/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="submitted=true; showSuccess();"
->
+    <form class="trial-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfL5gWJZ6t4Kp7xTq0mE3v6C1YH7Xx9sG5R9Y/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="showSuccess()">
 
-  <input type="text"
-         name="entry.2005620554"
-         placeholder="Student Name"
-         required>
+      <input name="entry.2005620554" placeholder="Student Name" required>
+      <select name="entry.1045781291" required>
+        <option value="">Select Grade</option>
+        <option>Grade 1–5</option>
+        <option>Grade 6–8</option>
+        <option>Grade 9–12</option>
+      </select>
+      <select name="entry.1065046570" required>
+        <option value="">Select Course</option>
+        <option>Maths</option>
+        <option>Science</option>
+        <option>Maths & Science</option>
+      </select>
+      <input type="email" name="entry.1166974658" placeholder="Parent Email" required>
+      <input type="tel" name="entry.839337160" placeholder="Contact Number" required>
+      <button type="submit">Submit</button>
+    </form>
 
-  <select name="entry.1045781291" required>
-    <option value="">Select Grade</option>
-    <option>Grade 1–5</option>
-    <option>Grade 6–8</option>
-    <option>Grade 9–12</option>
-  </select>
-
-  <select name="entry.1065046570" required>
-    <option value="">Select Course</option>
-    <option>Maths</option>
-    <option>Science</option>
-    <option>Maths & Science</option>
-  </select>
-
-  <input type="email"
-         name="entry.1166974658"
-         placeholder="Parent Email"
-         required>
-
-  <input type="tel"
-         name="entry.839337160"
-         placeholder="Contact Number"
-         required>
-
-  <button type="submit">Submit</button>
-</form>
-
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<p id="successMessage" style="display:none;"><p id="successMessage" style="display:none;">
-  ✅ Thank you! We will contact you shortly.
-</p>
-
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <p id="successMessage" style="display:none; color:green; text-align:center; margin-top:15px;">
+      ✅ Thank you! We will contact you shortly.
+    </p>
   </div>
 </div>
 
@@ -383,44 +309,16 @@
 function openModal() {
   document.getElementById("trialModal").style.display = "block";
 }
-
 function closeModal() {
   document.getElementById("trialModal").style.display = "none";
 }
-
-function handleSubmit(event) {
-  event.preventDefault();
-  const form = document.getElementById("trialForm");
-
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      form.style.display = "none";
-      document.getElementById("successMessage").style.display = "block";
-    }
-  });
+function showSuccess() {
+  setTimeout(() => {
+    document.querySelector(".trial-form").style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+  }, 800);
 }
 </script>
-  
-<section class="container" id="contact" style="padding:60px 0;">
-  <h2>Contact Us</h2>
-  <p>Email: info@meritlearners.com</p>
 
-  
-  
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
