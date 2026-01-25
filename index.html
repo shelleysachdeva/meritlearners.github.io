@@ -1,92 +1,267 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="css/style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merit Learners | Online Math & Science Tutoring</title>
 
-Merit Learners | Online Math & Science Tutoring for Grades 1–12
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-<h1 class="logo">Merit Learners</h1>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="subjects.html">Subjects</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
-<h2>Building Strong Foundations in Math & Science — Worldwide</h2>
-<p>Personalized 1‑on‑1 online tutoring for Grades 1–12, aligned with the US curriculum.</p>
-<a href="contact.html" class="btn">Book a Free Demo</a>
-<h3>Why Parents Choose Merit Learners</h3>
-<div class="grid">
-  <div class="card">✔ Certified & Experienced Tutors</div>
-  <div class="card">✔ US Curriculum Aligned (Common Core)</div>
-  <div class="card">✔ Personalized 1‑on‑1 Attention</div>
-  <div class="card">✔ Flexible Scheduling for US Time Zones</div>
-</div>
-<h3>Grades We Support</h3>
-<div class="grid">
-  <div class="card">
-    <h4>Grades 1–5</h4>
-    <p>Build strong foundations in Math & Science with fun, engaging lessons.</p>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1f4ed8;
+      --yellow: #facc15;
+      --orange: #fb923c;
+      --dark: #1f2937;
+      --light: #f9fafb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: white;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    /* FEATURES */
+    .features {
+      background: var(--light);
+      padding: 70px 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .card i {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    /* GRADES */
+    .grades {
+      padding: 70px 0;
+    }
+
+    .grade-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .grade-card {
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--light);
+      border-top: 6px solid var(--yellow);
+    }
+
+    .grade-card:nth-child(2) {
+      border-color: var(--orange);
+    }
+
+    .grade-card:nth-child(3) {
+      border-color: var(--primary);
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--primary);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .cta .btn {
+      background: var(--yellow);
+      color: var(--dark);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Merit Learners</div>
+    <nav>
+      <a href="#">Programs</a>
+      <a href="#">Why Us</a>
+      <a href="#">Contact</a>
+    </nav>
   </div>
-  <div class="card">
-    <h4>Grades 6–8</h4>
-    <p>Strengthen concepts, improve problem‑solving, and boost confidence.</p>
+</header>
+
+<section class="hero container">
+  <div>
+    <h1>Building Strong Foundations in Math & Science</h1>
+    <p>Personalized 1-on-1 online tutoring for Grades 1–12, aligned with the US curriculum.</p>
+    <a href="#" class="btn">Book a Free Demo</a>
   </div>
-  <div class="card">
-    <h4>Grades 9–12</h4>
-    <p>Advanced Math & Science support for academic excellence.</p>
+  <img src="images/hero-student.jpg" alt="Online learning student">
+</section>
+
+<section class="features">
+  <div class="container feature-grid">
+    <div class="card">
+      <i class="fa-solid fa-user-graduate"></i>
+      <p>Certified & Experienced Tutors</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-book-open"></i>
+      <p>US Curriculum Aligned</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-child"></i>
+      <p>1-on-1 Personalized Attention</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-clock"></i>
+      <p>Flexible US Time Zones</p>
+    </div>
   </div>
-</div>
-<h3>How It Works</h3>
-<div class="grid">
-  <div class="card">
-    <h4>1. Book a Free Demo</h4>
-    <p>Schedule a no‑obligation trial class with an expert tutor.</p>
+</section>
+
+<section class="grades container">
+  <h2 style="text-align:center;margin-bottom:40px;">Programs We Offer</h2>
+  <div class="grade-grid">
+    <div class="grade-card">
+      <h3>Elementary (Grades 1–5)</h3>
+      <p>Strong foundations in Math & Science with fun, engaging methods.</p>
+    </div>
+    <div class="grade-card">
+      <h3>Middle School (Grades 6–8)</h3>
+      <p>Concept clarity, problem-solving, and exam readiness.</p>
+    </div>
+    <div class="grade-card">
+      <h3>High School (Grades 9–12)</h3>
+      <p>Advanced concepts aligned with US standards.</p>
+    </div>
   </div>
-  <div class="card">
-    <h4>2. Get a Learning Plan</h4>
-    <p>We assess your child’s needs and create a personalized plan.</p>
-  </div>
-  <div class="card">
-    <h4>3. Start Learning</h4>
-    <p>Attend regular 1‑on‑1 online sessions and track progress.</p>
-  </div>
-</div>
-<h3>Book a Free Demo Class</h3>
-<p style="text-align:center; max-width:700px; margin:0 auto 30px;">Let your child experience a personalized 1-on-1 online session with our expert tutors. No obligation. No payment required.</p>
+</section>
 
-<form action="https://formspree.io/f/xyzzabcd" method="POST" class="card" style="max-width:600px; margin:0 auto; text-align:left;">
-  <label>Parent Name</label><br>
-  <input type="text" name="parent_name" required style="width:100%; padding:12px; margin-bottom:15px;">
+<section class="cta">
+  <h2>Give Your Child a Strong Academic Edge</h2>
+  <a href="#" class="btn">Schedule a Free Trial</a>
+</section>
 
-  <label>Student Grade</label><br>
-  <select name="grade" required style="width:100%; padding:12px; margin-bottom:15px;">
-    <option value="">Select Grade</option>
-    <option>Grades 1–5</option>
-    <option>Grades 6–8</option>
-    <option>Grades 9–12</option>
-  </select>
+<footer>
+  © 2026 Merit Learners. All rights reserved.
+</footer>
 
-  <label>Subject</label><br>
-  <select name="subject" required style="width:100%; padding:12px; margin-bottom:15px;">
-    <option value="">Select Subject</option>
-    <option>Math</option>
-    <option>Science</option>
-    <option>Math & Science</option>
-  </select>
-
-  <label>Email Address</label><br>
-  <input type="email" name="email" required style="width:100%; padding:12px; margin-bottom:15px;">
-
-  <label>Message (Optional)</label><br>
-  <textarea name="message" rows="4" style="width:100%; padding:12px; margin-bottom:20px;"></textarea>
-
-  <button type="submit" class="btn" style="width:100%;">Request Free Demo</button>
-<form action="https://formspree.io/f/xyzzabcd" method="POST">
-
-<h3>Give Your Child the Academic Advantage</h3>
-<a href="#" class="btn">Start with a Free Demo</a>
-© 2026 Merit Learners. All rights reserved.
-
-
-
-
+</body>
+</html>
