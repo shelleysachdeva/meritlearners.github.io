@@ -299,33 +299,31 @@
   action="https://docs.google.com/forms/d/e/1FAIpQLSctXGGh9S11e9xSKfRraweeL87Kj_fOWJv5KuQ2dE2ONRZOwA/formResponse"
   method="POST"
   target="hidden_iframe"
-  onsubmit="handleSubmit();">
-
-  <!-- REQUIRED GOOGLE FORM HIDDEN FIELDS -->
-  <input type="hidden" name="fvv" value="1">
-  <input type="hidden" name="fbzx" value="-1234567890123456789">
-  <input type="hidden" name="pageHistory" value="0">
+  onsubmit="showSuccess();">
 
   <input name="entry.2005620554" placeholder="Student Name" required>
 
-  <select name="entry.1045781291" required>
-    <option value="">Select Grade</option>
-    <option>Grades 1–5</option>
-    <option>Grades 6–8</option>
-    <option>Grades 9–12</option>
-  </select>
+  <!-- GRADE (TEXT INPUT – NOT DROPDOWN) -->
+  <input name="entry.1045781291"
+         placeholder="Grade (e.g. Grades 1-5 / 6-8 / 9-12)"
+         required>
 
-  <select name="entry.1065046570" required>
-    <option value="">Select Course</option>
-    <option>Maths</option>
-    <option>Science</option>
-    <option>Maths & Science</option>
-  </select>
+  <!-- SUBJECT (TEXT INPUT – NOT DROPDOWN) -->
+  <input name="entry.1065046570"
+         placeholder="Subject (Maths / Science / Both)"
+         required>
 
-  <input type="email" name="entry.1166974658" placeholder="Parent Email" required>
-  <input type="tel" name="entry.839337160" placeholder="Contact Number" required>
+  <input type="email"
+         name="entry.1166974658"
+         placeholder="Parent Email"
+         required>
 
-  <button type="submit">Submit</button>
+  <input type="tel"
+         name="entry.839337160"
+         placeholder="Contact Number"
+         required>
+
+  <button type="submit">Book Free Trial</button>
 </form>
 
 <iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -337,28 +335,18 @@
 </div>
 
 <script>
-let formSubmitted = false;
-
-function handleSubmit() {
-  formSubmitted = true;
+function showSuccess() {
   setTimeout(() => {
     document.querySelector(".trial-form").style.display = "none";
     document.getElementById("successMessage").style.display = "block";
-  }, 1000);
-}
-
-function openModal() {
-  document.getElementById("trialModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("trialModal").style.display = "none";
+  }, 800);
 }
 </script>
 
 
 </body>
 </html>
+
 
 
 
