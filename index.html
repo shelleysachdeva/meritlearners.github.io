@@ -296,32 +296,40 @@
     <h2>Book a Free Trial Class</h2>
 
     <form class="trial-form"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSctXGGh9S11e9xSKfRraweeL87Kj_fOWJv5KuQ2dE2ONRZOwA/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="showSuccess()">
+  action="https://docs.google.com/forms/d/e/1FAIpQLSctXGGh9S11e9xSKfRraweeL87Kj_fOWJv5KuQ2dE2ONRZOwA/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="handleSubmit();">
 
-      <input name="entry.2005620554" placeholder="Student Name" required>
-      <select name="entry.1045781291" required>
-  <option value="">Select Grade</option>
-  <option>Grades 1–5</option>
-  <option>Grades 6–8</option>
-  <option>Grades 9–12</option>
-</select>
+  <!-- REQUIRED GOOGLE FORM HIDDEN FIELDS -->
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="fbzx" value="-1234567890123456789">
+  <input type="hidden" name="pageHistory" value="0">
 
-     <select name="entry.1065046570" required>
-  <option value="">Select Course</option>
-  <option>Maths</option>
-  <option>Science</option>
-  <option>Maths & Science</option>
-</select>
+  <input name="entry.2005620554" placeholder="Student Name" required>
 
-      <input type="email" name="entry.1166974658" placeholder="Parent Email" required>
-      <input type="tel" name="entry.839337160" placeholder="Contact Number" required>
-      <button type="submit">Submit</button>
-    </form>
+  <select name="entry.1045781291" required>
+    <option value="">Select Grade</option>
+    <option>Grades 1–5</option>
+    <option>Grades 6–8</option>
+    <option>Grades 9–12</option>
+  </select>
 
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <select name="entry.1065046570" required>
+    <option value="">Select Course</option>
+    <option>Maths</option>
+    <option>Science</option>
+    <option>Maths & Science</option>
+  </select>
+
+  <input type="email" name="entry.1166974658" placeholder="Parent Email" required>
+  <input type="tel" name="entry.839337160" placeholder="Contact Number" required>
+
+  <button type="submit">Submit</button>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
     <p id="successMessage" style="display:none; color:green; text-align:center; margin-top:15px;">
       ✅ Thank you! We will contact you shortly.
     </p>
@@ -329,22 +337,29 @@
 </div>
 
 <script>
-function openModal() {
-  document.getElementById("trialModal").style.display = "block";
-}
-function closeModal() {
-  document.getElementById("trialModal").style.display = "none";
-}
-function showSuccess() {
+let formSubmitted = false;
+
+function handleSubmit() {
+  formSubmitted = true;
   setTimeout(() => {
     document.querySelector(".trial-form").style.display = "none";
     document.getElementById("successMessage").style.display = "block";
-  }, 800);
+  }, 1000);
+}
+
+function openModal() {
+  document.getElementById("trialModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("trialModal").style.display = "none";
 }
 </script>
 
+
 </body>
 </html>
+
 
 
 
